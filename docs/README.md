@@ -7,6 +7,7 @@ This directory contains the project documentation for the crop yield forecasting
 Use this section of the repository to describe:
 
 - data sources
+- dataset-specific notes such as [`SIF_data.md`](SIF_data.md)
 - collection or acquisition process
 - preprocessing steps
 - assumptions, limitations, and data quality considerations
