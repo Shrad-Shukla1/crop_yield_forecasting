@@ -17,7 +17,9 @@ Chen, S., Liu, L., Sui, L. et al. An improved spatially downscaled solar-induced
 > Record: Daily, 20030101-20090529
 
 > Reference: (1) Joiner et al. 2016, https://doi.org/10.5194/amt-9-3939-2016;
-(2) Joiner et al. 2013, https://doi.org/10.5194/amt-6-2803-2013"  
+(2) Joiner et al. 2013, https://doi.org/10.5194/amt-6-2803-2013"
+
+> Description: "This dataset provides Level 2 Solar-Induced Fluorescence (SIF) of chlorophyll estimates derived from the SCIAMACHY instrument on the European Space Agency (ESA) Environmental satellite (Envisat). Each file contains daily raw and bias-adjusted SIF on an orbital basis (land pixels only), at a resolution of approximately 30 km x 240 km at nadir, along with quality control information and ancillary data. Data is provided for the period from 20030101 to 20120408. The SCIAMACHY SIF product is inherently noisy due to low signal levels and has undergone only a limited amount of validation." ;
 
 (3) fusion_SCIAMACHY_GOME-2:
 > Record: Monthly 2003-2017
