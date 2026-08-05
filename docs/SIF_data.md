@@ -32,3 +32,4 @@ Chen, S., Liu, L., Sui, L. et al. An improved spatially downscaled solar-induced
 > Record: Daily: 2014140906 to 20220425
 
 > References: (1) Sun, Y. et al., Remote Sensing of Environment (2018), https://doi.org/10.1016/j.rse.2018.02.016, (2) Taylor, T.E. et al., Atmospheric Measurement Techniques (2016), https://doi.org/10.5194/amt-9-973-2016
+
