@@ -62,8 +62,7 @@ def load_year(year: int, files: List[Path]) -> xr.DataArray:
     rasters: List[xr.DataArray] = []
     times: List[datetime] = []
     for f in sorted(files):
-        da = rioxarray.open_rasterio(f, masked=True)
-        # rioxarray returns a 3‑D array (band, y, x).  For single band we
+        da = xr.open_dataarray(f)
         # squeeze the first dimension.
         da = da.squeeze()
         # Mask water bodies (32767) and lands under snow/ice (32766)
@@ -118,7 +117,7 @@ def main() -> None:
             print(f"Processing year {year} ({len(files)} month(s))")
         da_year = load_year(year, files)
         out_path = args.out_dir / f"GOSIF_v2_{year}.nc"
-        da_year.to_netcdf(out_path, format="NETCDF4", engine="netcdf4")
+        da_year.to_dataset(name='SIF').to_netcdf(out_path, format="NETCDF4", engine="netcdf4")
         print(f"Wrote {out_path}")
 
 
