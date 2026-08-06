@@ -1,4 +1,4 @@
-    Saving figure to /home/chc-source/shrad/Scripts/Funded_projects/2026/crop_yield_forecasting/results/figures//SIF_yield_correlation_map.png
+    The following figure shows the correlation between seasonal SIF and reported sub-national Maize yield, and the same with seasonal rainfall. Crop fraction used for the analysis is also provided. 
 
 
 
@@ -7,7 +7,7 @@
     
 
 
-    Saving figure to /home/chc-source/shrad/Scripts/Funded_projects/2026/crop_yield_forecasting/results/figures//SIF_vs_Yield_in_Free_State.png
+   The following figure compares spatially aggregated seasonal SIF with reported Maize yield for Free state province in South Africa. 
 
 
 
@@ -16,33 +16,14 @@
     
 
 
-    Saving figure to /home/chc-source/shrad/Scripts/Funded_projects/2026/crop_yield_forecasting/results/figures//comparison_of_downscaled_yield_maps_for_free_state.png
-
+   The following figure compares disaggregated yield based on weights that come from gridded seasonal SIF max data for growing season ending in the harvest year shown below. As per production reports 2015 harvest year experienced a moderate drought, 2016 experienced a major drought whereas 2017 was a major surplus production year. 
 
 
     
 ![png](downscale_yield_with_SIF_files/downscale_yield_with_SIF_8_1.png)
     
 
-
-    Saving downscaled yield for Western Cape to /home/chc-shrad/DATA/Crop_yield_forecasting/Disaggregated_yield/SIF_based/downscaled_yield_fnid_ZA1994A101_South_Africa_Western_Cape.nc
-    Saving downscaled yield for Eastern Cape to /home/chc-shrad/DATA/Crop_yield_forecasting/Disaggregated_yield/SIF_based/downscaled_yield_fnid_ZA1994A102_South_Africa_Eastern_Cape.nc
-    Saving downscaled yield for Northern Cape to /home/chc-shrad/DATA/Crop_yield_forecasting/Disaggregated_yield/SIF_based/downscaled_yield_fnid_ZA1994A103_South_Africa_Northern_Cape.nc
-
-
-    /home/shrad/miniforge3/envs/py312/lib/python3.12/site-packages/dask/array/reductions.py:654: RuntimeWarning: All-NaN slice encountered
-      return np.nanmax(x_chunk, axis=axis, keepdims=keepdims)
-
-
-    Saving downscaled yield for Free State to /home/chc-shrad/DATA/Crop_yield_forecasting/Disaggregated_yield/SIF_based/downscaled_yield_fnid_ZA1994A104_South_Africa_Free_State.nc
-    Saving downscaled yield for Kwazulu-Natal to /home/chc-shrad/DATA/Crop_yield_forecasting/Disaggregated_yield/SIF_based/downscaled_yield_fnid_ZA1994A105_South_Africa_Kwazulu-Natal.nc
-    Saving downscaled yield for North West to /home/chc-shrad/DATA/Crop_yield_forecasting/Disaggregated_yield/SIF_based/downscaled_yield_fnid_ZA1994A106_South_Africa_North_West.nc
-    Saving downscaled yield for Gauteng to /home/chc-shrad/DATA/Crop_yield_forecasting/Disaggregated_yield/SIF_based/downscaled_yield_fnid_ZA1994A107_South_Africa_Gauteng.nc
-    Saving downscaled yield for Mpumalanga to /home/chc-shrad/DATA/Crop_yield_forecasting/Disaggregated_yield/SIF_based/downscaled_yield_fnid_ZA1994A108_South_Africa_Mpumalanga.nc
-    Saving downscaled yield for Limpopo to /home/chc-shrad/DATA/Crop_yield_forecasting/Disaggregated_yield/SIF_based/downscaled_yield_fnid_ZA1994A109_South_Africa_Limpopo.nc
-
-
-    Saving figure to /home/chc-source/shrad/Scripts/Funded_projects/2026/crop_yield_forecasting/results/figures//SPAM_2020_vs_SIF_disaggregated_yield_comparison_for_South_Africa.png
+The following figure compares SPAM-2020 based Maize yield in South Africa (this uses FAO national yield data to disaggregate to gridded scale) with SIF based gridded yield. In general there is a good agreement but in some provinces the difference is substantial. I wonder if the source of the difference is the crop mask that I am using. Could it be that the crop mask that I am using is more representative of all crops vs Maize crop only which is what SPAM uses. I could decide to use a common crop mask which might increase the similarities in the SIF disaggretaed yields with SPAM yield. 
 
 
 
