@@ -15,7 +15,7 @@
    - For each subset:
      * Detects changes in `fnid` (fnid is a code for administrative unit) and, if changed, subsets both SIF and crop mask rasters to the corresponding administrative polygon for that fnid using `salem.subset`.
      * Determines the planting/harvest dates and builds a time slice from the first day of planting month to the last day of harvest month.
-     * Extracts the SIF time series for the season based on the time slice build above.
+     * Extracts the SIF time series for the season based on the time slice build above. For example, for Maize crop type over South Africa, the growing season spans from October to April, so for each harvest year (the growing season remains constant) and we select extract a temporal slice of October-April data from SIF for each year. 
      * After extracting time slice of SIF for a given growing season, "seasonal SIF" is calculated using the following approach:
        - **Mean SIF** over the growing season → multiplied by crop fraction mask, zero values masked → spatial mean over the administrative boundary → stored as `sif_mean`
        - **Max SIF** over the growing season → multiplied by crop fraction mask, zero values masked → spatial mean over the administrative boundary → stored as `sif_max`.
