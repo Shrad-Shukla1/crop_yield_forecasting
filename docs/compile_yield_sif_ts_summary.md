@@ -1,27 +1,18 @@
 # Methodology for compiling seasonal SIF and crop yield for each of the sub-national units 
 
-1. **Setup**
-   - Imports the required libraries and defines directories for SIF outputs, crop mask, crop data, and administrative boundaries.
-   - Loads crop production CSV and its GeoPackage boundary file.
+1. **Crop mask**
+   - At first we reproject crop masks to the grid of the SIF data. The reporjection is done so that overall area is conserved. 
+   - We work with two types of crop masks:
+      -  The first crop mask (Lu et al., represents all crops)
+      - The second set of crop mask is crop specific. This comes from GeoGLAM, known as BEST crop mask. These are available for Wheat, Rice, Soybean and Maize. 
 
-2. **Load SIF data**
-   - Creates a monthly‑end date range from 2003‑01‑01 to 2017‑12‑31.
-   - Opens the netCDF SIF files as a multi‑dataset and aligns the `time` coordinate.
-   - Loads the crop‑mask raster dataset.
-
-3. **Loop over crops** (Maize, Wheat, Rice, Sorghum, Millet)
-   - Filters crop data each of the crop type, QC flag 0, and harvest years 2003‑2017 (consistent with SIF data availability).
-   - Deduplicates on relevant columns to get unique crop subsets. This is needed because for the same crop and administrative unit, there can be different types of crop production systems (e.g. rainfed and irrigated) and season name (e.g. summer and winter)
-   - For each subset:
-     * Detects changes in `fnid` (fnid is a code for administrative unit) and, if changed, subsets both SIF and crop mask rasters to the corresponding administrative polygon for that fnid using `salem.subset`.
-     * Determines the planting/harvest dates and builds a time slice from the first day of planting month to the last day of harvest month.
-     * Extracts the SIF time series for the season based on the time slice build above. For example, for Maize crop type over South Africa, the growing season spans from October to April, so for each harvest year (the growing season remains constant) and we select extract a temporal slice of October-April data from SIF for each year. 
-     * After extracting time slice of SIF for a given growing season, "seasonal SIF" is calculated using the following approach:
-       - **Mean SIF** over the growing season → multiplied by crop fraction mask, zero values masked → spatial mean over the administrative boundary → stored as `sif_mean`
-       - **Max SIF** over the growing season → multiplied by crop fraction mask, zero values masked → spatial mean over the administrative boundary → stored as `sif_max`.
-     * Appends a dictionary with metadata and the two versions of spatially aggregated SIF values to `results`.
-
-4. **Finalize**
-   - Converts `results` into a DataFrame and saves it as a CSV file in `datadir`, named to reflect the year range and crop type.
-
-The script combines crop‑production records with spatially sub‑sampled SIF data to compute, per unique administrative unit, the mean and maximum SIF values over the growing season, and records these alongside yield and metadata for downstream analysis.
+2. **Spatially aggregated seasonal SIF**
+   - We use fusion_SCIAMACHY_GOME-2 SIF monthly data 
+   - For any given admin unit we first subset gridded SIF data using admin shapefile.
+   - For a given crop and the admin unit we then extract *planting year, month, harvesting year and month*. We assume the time period between reported planting month and harvest month to be representative of the growing season and use that period to temporally subset SIF data.
+   - We then take the seasonal average of SIF data over the growing season which we consider as seasonal SIF. 
+   - Finally we choose three differen stategy to screen and spatially aggregate seasonal SIF over a given admin unit
+      - **No mask**: In first case, we consider all of the pixels in a given admin unit and take spatial average of seasonal SIF across all pixels.
+      - **All crop mask**: In this case we only select pixels where Lu et al., crop layer shows >10% fractional cropped area.
+      - **Crop specific mask**: In this case instead of an all crop layer we use crop type specific mask (e.g. Maize, Wheat, Soybean and Rice) for masking ut SIF data.
+   - Spatial aggregation of seasonal SIF data then leads to time-series of SIF data for admin unit, crop to compare with reported crop yield
