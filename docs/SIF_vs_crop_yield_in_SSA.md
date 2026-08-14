@@ -2,6 +2,8 @@
 - How well can SIF explain the variability in agricultural productivity in sub‑Saharan Africa (SSA)?
 - How does the relationship between SIF and agricultural productivity vary by crop type?
 
+## Methods
+See how gridded monthly SIF data was used to calculate spatially aggregated seasonal SIF [here](https://github.com/Shrad-Shukla1/crop_yield_forecasting/blob/main/docs/compile_yield_sif_ts_summary.md)
 ## Results
 The results below show how seasonal SIF compares with the spatial variability in long‑term mean yield and interannual variability in reported yield in SSA.
 The analysis focuses on five major crops that fall into either C3 (Maize, Sorghum, Soybean) or C4 (Wheat, Rice) categories.
