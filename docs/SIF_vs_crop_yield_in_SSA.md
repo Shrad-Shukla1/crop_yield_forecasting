@@ -14,8 +14,12 @@ The analysis further tests the impact of crop masking, considering three cases:
 - **Crop‑specific mask** – when a crop‑specific cropland layer is applied to the SIF data.
 
 **Key findings**
-1. In general, the relationship between SIF and reported yields is stronger for C3 crops than for C4 crops.
-2. This relationship does not appear to be sensitive to the choice of crop mask.
+1. In general, the correlation between SIF and reported yields is stronger for C3 crops than for C4 crops.
+2. In general, the correlation between SIF and reported yield is high over selected regions, such as South Africa, Zimbabwe, Mozambique, Somalia, Ethiopia, and Sudan for Maize and Sorghum (both C3 crops).
+3. This relationship does not appear to be very sensitive to the choice of crop mask.
+
+**Caveats**
+The results are likely to be affected by the quality of the reported yield as well as crop masks. 
 
 > **Figure 1** – Scatter plot of the long‑term mean of seasonal SIF versus the long‑term mean of reported crop yield across different admin units in SSA.
 > For each admin unit, the SIF data was processed with (i) no mask (first column), (ii) all‑crop mask (middle column), and (iii) crop‑specific mask (third column).
