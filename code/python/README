@@ -1,0 +1,2 @@
+for crop_type in Rice Soybean Spring_Wheat Winter_Wheat Maize; do python ./conservative_crop_specific_mask_remap.py --crop-mask-path /home/chc-shrad/DATA/Crop_yield_forecasting/Crop_masks/Geoglam/BEST/Percent_"$crop_type".tif --sif-sample-path /home/chc-shrad/DATA/SIF/fusion_SCIAMACHY_GOME-2/SIF_SCIAMACHY_GOME2_Harmonized.sif005_201001_subsetted.nc4 --output-path /home/chc-source/shrad/Scripts/Funded_projects/2026/crop_yield_forecasting/code/notebook/code/BEST_remapped_"$crop_type"_crop_fraction.nc --crop-mask-var band_data; done;
+
