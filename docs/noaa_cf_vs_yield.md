@@ -5,10 +5,17 @@ The NOAA Climate Forecast (CF) vs. Crop Yield study quantifies the relationship 
 
 ## Results
 
+*Key findings*
+1. Correlation between NOAA precipitation forecasts accumulated over the growing season and crop yield increases as the forecasts is generated closer to the growing season.
+2. The correlation between NOAA precipitation forecasts and crop yield is not very sensitive to crop masking and detrending (first differencing) in this case.
+3. The correlation between CHIRPS and yield increases substantially after applying first differencing.
+4. Without applying first differencing the correlation of noaa precipitation forecasts (generated closer to the growing season) with yield is higher than their correlation with CHIRPS. Perhaps noaa precipitation forecasts have similar trend as the crop yield?
+
 > The following figure shows the correlation between absolute values of NOAA precip forecasts and crop yield, CHIRPS and crop yield over the growing seasons of roughly 1991-2022. The main growing season for Maize crop in South Africa typically spans over October-April. For this analysis, the forecasts generated 12 to 7 months before the harvest month (April) were used to calculate growing seasonal total precipitation forecasts. For example, for the growing season of 1991/92 which spans from Octover 1991 to April 1992. The earliest forecast for the growing season was generated in May (lead-12 before harvest month) and the latest forecasts were generated in October 1991 (lead-7 months before harvest). 
 
-    - **No crop mask** The map in the top panel uses NOAA precipitation forecasts and CHIRPS that were aggregated over given admin unit without applying any crop mask
-    - **Lu crop mask** The map in the top panel uses NOAA precipitation forecasts and CHIRPS that were aggregated over given admin unit after applying Lu crop mask.
+**No crop mask** The map in the top panel uses NOAA precipitation forecasts and CHIRPS that were aggregated over given admin unit without applying any crop mask
+
+**Lu crop mask** The map in the top panel uses NOAA precipitation forecasts and CHIRPS that were aggregated over given admin unit after applying Lu crop mask.
 
 ![Correlation maps](../results/noaa_cf_vs_yield/noaa_cfs_vs_yield_1991_2023_Maize_crop_lu_crop_mask_correlation_maps.png)
 
